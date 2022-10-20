@@ -1,0 +1,63 @@
+#cloud-config
+# Auto-generated autoinstall configuration -- do not edit
+# ${hostname}
+autoinstall:
+  version: 1
+
+  storage:
+    layout:
+      name: lvm
+
+  network:
+    # This is just a netplan configuration
+    # https://netplan.io/reference
+    version: 2
+    ethernets:
+      eth0:
+        addresses:
+%{~ for address in ip_addresses }
+          - "${address}"
+%{ endfor }
+        gateway4: "${ip4_gateway}"
+        accept-ra: true
+        nameservers:
+          search: [hosted.srcf.net]
+          addresses: ["2001:630:212:8::d:0", "2001:630:212:12::d:1", "131.111.12.20", "131.111.8.42"]
+  ssh:
+    install-server: true
+    allow-pw: false
+
+  apt:
+    preserve_sources_list: false
+    primary:
+      - uri: 'http://www-uxsup.csx.cam.ac.uk/pub/linux/ubuntu'
+        arches:
+          - amd64
+          - i386
+          - default
+
+  packages:
+    - xe-guest-utilities
+
+  locale: en_GB.UTF-8
+  keyboard:
+    layout: en
+    variant: uk
+
+  reporting:
+    builtin:
+      type: print
+
+  user-data:
+    # This is a standard cloud-config user data section
+    # We set up the provisioning user here (not above) so that we can avoid setting a password
+    hostname: ${hostname}
+    fqdn: ${hostname}.hosted.srcf.net
+    users:
+      - name: oper
+        gecos: SRCF operator
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        ssh_authorized_keys:
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf788himRIwHB49UbZMVfdkMwlAGot7YWjwDD1zfvzq edwin@ant
+        lock_passwd: true
+        groups: [adm, audio, cdrom, dialout, floppy, video, plugdev, dip]
