@@ -24,7 +24,7 @@ locals {
   pool_to_sr = {
     pitch = "enid"
     lightning = "enid"
-    thunder = "elmer"
+    thunder = "eldo"
   }
   pool_to_pif = {
     pitch = "External"
