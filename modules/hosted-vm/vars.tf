@@ -44,3 +44,8 @@ variable "install_xen_agent" {
   type = bool
   default = true
 }
+
+variable "auto_poweron" {
+  type = bool
+  default = true
+}

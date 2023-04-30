@@ -16,7 +16,7 @@ resource "xenorchestra_vm" "vm" {
 
   template = data.xenorchestra_template.ubuntu-2004.id
 
-  auto_poweron = true
+  auto_poweron = var.auto_poweron
 
   name_label = var.hostname
   name_description = "${var.hostname}.hosted"

@@ -15,4 +15,5 @@ module "eb677-sandbox" {
   disk_gb = 8
   memory_gb = 2
   cpus = 2
+  auto_poweron = false
 }
