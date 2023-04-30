@@ -26,7 +26,7 @@ locals {
     lightning = "enid"
     thunder = "eldo"
   }
-  pool_to_pif = {
+  pool_to_network = {
     pitch = "External"
     lightning = "External"
     thunder = "CUDN"
@@ -34,7 +34,7 @@ locals {
 }
 
 data "xenorchestra_network" "external" {
-  name_label = local.pool_to_pif[var.pool_name]
+  name_label = local.pool_to_network[var.pool_name]
   pool_id = data.xenorchestra_pool.this.id
 }
 
