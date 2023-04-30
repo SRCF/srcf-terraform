@@ -6,6 +6,7 @@ resource "xenorchestra_cloud_config" "hosted" {
       hostname = var.hostname,
       ip_addresses = var.ip_addresses,
       ip4_gateway = var.ip4_gateway,
+      install_xen_agent = var.install_xen_agent,
     }
   )
 }

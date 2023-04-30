@@ -34,3 +34,8 @@ variable "sr_id" {
 variable "network_id" {
   type = string
 }
+
+variable "install_xen_agent" {
+  type = bool
+  default = true
+}

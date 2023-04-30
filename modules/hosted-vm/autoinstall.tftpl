@@ -37,8 +37,10 @@ autoinstall:
           - i386
           - default
 
+%{ if install_xen_agent ~}
   packages:
     - xe-guest-utilities
+%{~ endif }
 
   locale: en_GB.UTF-8
   keyboard:
