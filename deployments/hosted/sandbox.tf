@@ -9,7 +9,7 @@ module "eb677-sandbox" {
   network_id = data.xenorchestra_network.external.id
   sr_id = data.xenorchestra_sr.enid.id
 
-  iso = "ubuntu-22.04.1-live-server-amd64.iso"
+  iso = "ubuntu-22.04.2-live-server-amd64.iso"
   install_xen_agent = false  # not available in jammy
 
   disk_gb = 8
