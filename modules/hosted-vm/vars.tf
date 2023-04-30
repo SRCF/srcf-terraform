@@ -3,7 +3,7 @@ variable "pool_id" {
 }
 
 variable "hostname" {
-  type = string
+  type        = string
   description = "Hostname for the hosted VM, not including the domain"
 }
 
@@ -36,16 +36,16 @@ variable "network_id" {
 }
 
 variable "iso" {
-  type = string
+  type    = string
   default = "ubuntu-20.04.6-live-server-amd64.iso"
 }
 
 variable "install_xen_agent" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "auto_poweron" {
-  type = bool
+  type    = bool
   default = true
 }

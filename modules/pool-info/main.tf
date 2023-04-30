@@ -1,17 +1,17 @@
 terraform {
   required_providers {
     xenorchestra = {
-      source = "terra-farm/xenorchestra"
+      source  = "terra-farm/xenorchestra"
       version = "~> 0.24.0"
     }
   }
 }
 
 variable "pool_name" {
-  type = string
+  type        = string
   description = "name-label of the pool"
   validation {
-    condition = contains(["pitch", "lightning", "thunder"], var.pool_name)
+    condition     = contains(["pitch", "lightning", "thunder"], var.pool_name)
     error_message = "Pool name '${var.pool_name}' is unknown."
   }
 }
@@ -22,25 +22,25 @@ data "xenorchestra_pool" "this" {
 
 locals {
   pool_to_sr = {
-    pitch = "enid"
+    pitch     = "enid"
     lightning = "enid"
-    thunder = "eldo"
+    thunder   = "eldo"
   }
   pool_to_network = {
-    pitch = "External"
+    pitch     = "External"
     lightning = "External"
-    thunder = "CUDN"
+    thunder   = "CUDN"
   }
 }
 
 data "xenorchestra_network" "external" {
   name_label = local.pool_to_network[var.pool_name]
-  pool_id = data.xenorchestra_pool.this.id
+  pool_id    = data.xenorchestra_pool.this.id
 }
 
 data "xenorchestra_sr" "vm_disks" {
   name_label = local.pool_to_sr[var.pool_name]
-  pool_id = data.xenorchestra_pool.this.id
+  pool_id    = data.xenorchestra_pool.this.id
 }
 
 output "pool_id" {

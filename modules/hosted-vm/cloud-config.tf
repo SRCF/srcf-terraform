@@ -3,9 +3,9 @@ resource "xenorchestra_cloud_config" "hosted" {
   template = templatefile(
     "../../modules/hosted-vm/autoinstall.tftpl",
     {
-      hostname = var.hostname,
-      ip_addresses = var.ip_addresses,
-      ip4_gateway = var.ip4_gateway,
+      hostname          = var.hostname,
+      ip_addresses      = var.ip_addresses,
+      ip4_gateway       = var.ip4_gateway,
       install_xen_agent = var.install_xen_agent,
     }
   )
