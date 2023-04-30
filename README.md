@@ -12,9 +12,10 @@ deployment folder.
 
 The Terraform state (which stores Terraform's memory of all resources it
 manages between invocations of the tool) is stored and locked via a Postgres
-database, accessible to the sysadmins.  As a one-time action, when first
-running `terraform init` the correct backend config argument must be passed to
-set up this database as Terraform's state backend.
+database, accessible to the sysadmins.  Each deployment has its own state, kept
+in its own database schema.  As a one-time action, when first running
+`terraform init` the correct backend config argument must be passed to set up
+this database as Terraform's state backend.
 
 
 ## Design notes
