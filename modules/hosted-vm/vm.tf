@@ -39,4 +39,10 @@ resource "xenorchestra_vm" "vm" {
     "hosted",
     "no_backup"
   ]
+
+  lifecycle {
+    ignore_changes = [
+      template
+    ]
+  }
 }
