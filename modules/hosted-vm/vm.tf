@@ -5,7 +5,7 @@ data "xenorchestra_template" "ubuntu-2004" {
 
 data "xenorchestra_vdi" "ubuntu-2004" {
   pool_id = var.pool_id
-  name_label = "ubuntu-20.04.5-live-server-amd64.iso"
+  name_label = var.iso
 }
 
 resource "xenorchestra_vm" "vm" {

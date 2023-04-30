@@ -35,6 +35,11 @@ variable "network_id" {
   type = string
 }
 
+variable "iso" {
+  type = string
+  default = "ubuntu-20.04.5-live-server-amd64.iso"
+}
+
 variable "install_xen_agent" {
   type = bool
   default = true
