@@ -2,16 +2,16 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/terra-farm/xenorchestra" {
-  version     = "0.23.3"
-  constraints = "~> 0.23.3"
+  version     = "0.24.0"
+  constraints = "~> 0.24.0"
   hashes = [
-    "h1:4YiN+dIweBdGo1cgoKBxSELfVVoVSVvlrxmmP4LYIPk=",
-    "zh:157b2aea519f0cbc2a16f4d34812cb0025e00fb058dc622158b85b05705f3700",
-    "zh:16b40fdb8855b5d96c7b24116748d00f9a6359fe1f8ed5a7dfb6279975753951",
-    "zh:3e1f631cc63221ca9ca051adaab44ccd3498b6458f2b6b9b80b30830bc8594a1",
-    "zh:3e5ad3fd5fcf34ec15f5e7a3e7e297bd38a1e979e32650975c582ab013a507f7",
-    "zh:58b1b8696e855dd629aa64bf8f707d84fcf1342f0742ecda0c476a1bf2b6f89b",
-    "zh:9fa8be7291e34b81853844e69101830b583fe2f8631a9c409ed44cece40b8c9f",
-    "zh:d1d6bf2845b109a1b3a817687ca2f62494dce8a1a4c21b3cf35cb88487fdf6d4",
+    "h1:ggfOjEPypvT24z7U36N1ZDlqwUdFI/6soZHTh+SPo2k=",
+    "zh:30778042769b3668f6080d2335fe0730508e6d1ad9a1fbb60594ca3e03a4f8e8",
+    "zh:53cdd86ce4b1e1c2ea5e2e4fca172fe971c847ce9c8912d93c09a0fab43fdc6f",
+    "zh:58e5df7f14ea49fd35bba3bc96f4a106d2b3e1bf08d14de69f9e93504365de8a",
+    "zh:9b8a314d575bf20c25ae9c4be087dcaf9f1afc4f2b0150af7d2695b2e26230a4",
+    "zh:b52e2d3f71786adab345efeb776a4c4266a62a03621978851f4dd08f4a147c50",
+    "zh:eafe0bda8093a9a68f7afcd03a6d03018160eb05497acbb3c3bcc187a0ff9996",
+    "zh:f8df2e286feb8542df46c8c47ee00860b41fbb6f6fc6b216ac227e90bfd14c2f",
   ]
 }
