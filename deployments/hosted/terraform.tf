@@ -6,5 +6,9 @@ terraform {
     }
   }
 
-  backend "pg" {}
+  backend "pg" {
+    config = {
+      schema_name = "hosted"
+    }
+  }
 }
