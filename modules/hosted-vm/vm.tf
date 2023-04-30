@@ -42,7 +42,8 @@ resource "xenorchestra_vm" "vm" {
 
   lifecycle {
     ignore_changes = [
-      template
+      cdrom,
+      template,
     ]
   }
 }
