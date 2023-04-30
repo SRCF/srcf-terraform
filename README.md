@@ -10,10 +10,11 @@ infrastructure) for the systems and services run by the SRCF.
 `terraform plan`, `terraform apply` etc. should be run from within a given
 deployment folder.
 
-**At present there is no setup for remote Terraform state sharing.**  In other
-words, two people running `terraform apply` for the same deployment will almost
-certainly destroy & recreate each other's infrastructure.  At present, eb677 is
-the one doing the deployment.
+The Terraform state (which stores Terraform's memory of all resources it
+manages between invocations of the tool) is stored and locked via a Postgres
+database, accessible to the sysadmins.  As a one-time action, when first
+running `terraform init` the correct backend config argument must be passed to
+set up this database as Terraform's state backend.
 
 
 ## Design notes
