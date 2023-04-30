@@ -14,10 +14,10 @@ autoinstall:
     version: 2
     ethernets:
       eth0:
-        addresses:
-%{~ for address in ip_addresses }
-          - "${address}"
-%{ endfor }
+        addresses: [
+        %{ for address in ip_addresses ~}
+        "${address}",
+        %{ endfor }]
         gateway4: "${ip4_gateway}"
         accept-ra: true
         nameservers:
